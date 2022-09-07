@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 700px;
+      /* background-color: pink; */
+      margin: 100px auto;
+    }
+
+    table,
+    th,
+    td {
+      text-align: center;
+      border: 1px solid #333;
+      border-collapse: collapse;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <!-- <tr>
+        <th>姓名</th>
+        <th>js分数</th>
+        <th>webAPI分数</th>
+        <th>期中考试分数</th>
+        <th>总分数</th>
+      </tr> -->
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td>小明</td>
+        <td>88</td>
+        <td>75</td>
+        <td>90</td>
+        <td>253</td>
+      </tr> -->
+    </tbody>
+  </table>
+  <script>
+    let data = [
+      {
+        name: '小明',
+        js: 88,
+        webapi: 75,
+        center: 90
+      }, {
+        name: '小红',
+        js: 90,
+        webapi: 88,
+        center: 92
+      }, {
+        name: '大毛',
+        js: 59,
+        webapi: 76,
+        center: 80
+      }, {
+        name: '阿美',
+        js: 77,
+        webapi: 66,
+        center: 70
+      }, {
+        name: 'pink',
+        js: 100,
+        webapi: 100,
+        center: 100
+      },
+    ]
+
+    document.querySelector('thead').innerHTML = `
+    <tr>
+        <th>姓名</th>
+        <th>js分数</th>
+        <th>webAPI分数</th>
+        <th>期中考试分数</th>
+        <th>总分数</th>
+      </tr>
+    `
+    document.querySelector('tbody').innerHTML = data.map(item => {
+      const { name, js, webapi, center } = item
+      return `<tr>
+        <td>${name}</td>
+        <td>${js}</td>
+        <td>${webapi}</td>
+        <td>${center}</td>
+        <td>${js + webapi + center}</td>
+      </tr>
+      `
+    }).join('')
+  </script>
+</body>
+
+</html>
